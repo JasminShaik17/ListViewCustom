@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
       Manifest.permission.WRITE_EXTERNAL_STORAGE);
             if(status== PackageManager.PERMISSION_GRANTED)
             {
-
+                lview.setAdapter(new MyAdapter(this));
             }else{
                 ActivityCompat.requestPermissions(this,
           new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(grantResults[0]==PackageManager.PERMISSION_GRANTED)
         {
-
+            lview.setAdapter(new MyAdapter(this));
         }else{
 
         }
